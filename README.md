@@ -41,6 +41,7 @@ def test_lab_passes() -> None:
 
 ```bash
 cd lab7
+git init
 uv sync --dev
 uv run pre-commit install
 uv run pytest
