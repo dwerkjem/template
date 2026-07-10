@@ -1,0 +1,36 @@
+# {{ project_name }}
+
+**Student:** {{ author }}  
+**Course:** {{ course }}  
+**Lab:** {{ lab_number }} — {{ lab_title }}
+
+{{ description }}
+
+## Run the tests
+
+```bash
+uv sync --dev
+uv run pytest
+```
+
+## Assignment requirements
+
+- [ ] Add the assignment requirements here.
+- [ ] Replace the placeholder function in `src/{{ package_name }}/__init__.py`.
+- [ ] Replace the placeholder test and add tests for every requirement.
+- [ ] Complete the pseudocode and integrity statement in `docs/`.
+
+## Project structure
+
+```text
+.
+├── docs/
+│   ├── integrity-statement.md
+│   └── pseudocode.md
+├── src/{{ package_name }}/
+│   └── __init__.py
+├── tests/
+│   └── test_lab.py
+├── pyproject.toml
+└── README.md
+```
