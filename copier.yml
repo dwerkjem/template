@@ -1,0 +1,47 @@
+_subdirectory: template
+_templates_suffix: .jinja
+
+project_name:
+  type: str
+  help: Full name of the lab
+  default: Programming Lab
+
+project_slug:
+  type: str
+  help: Project name used by uv; use lowercase letters and hyphens
+  default: "{{ project_name | lower | replace(' ', '-') }}"
+
+package_name:
+  type: str
+  help: Importable Python package name; use lowercase letters and underscores
+  default: "{{ project_slug | replace('-', '_') }}"
+
+author:
+  type: str
+  help: Student name
+  default: Derek R. Neilson
+
+course:
+  type: str
+  help: Course name and section
+  default: Programming 1
+
+lab_number:
+  type: str
+  help: Lab number or identifier
+  default: Lab 1
+
+lab_title:
+  type: str
+  help: Short title of the assignment
+  default: Introduction
+
+description:
+  type: str
+  help: One-sentence description of the lab
+  default: A Python programming lab.
+
+python_version:
+  type: str
+  help: Minimum supported Python version
+  default: "3.13"
