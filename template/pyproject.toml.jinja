@@ -12,8 +12,9 @@ dependencies = []
 
 [dependency-groups]
 dev = [
+    "black>=25.0",
+    "pre-commit>=4.0",
     "pytest>=8.0",
-    "ruff>=0.12",
 ]
 
 [tool.hatch.build.targets.wheel]
@@ -24,9 +25,6 @@ addopts = "-q"
 pythonpath = ["src"]
 testpaths = ["tests"]
 
-[tool.ruff]
+[tool.black]
 line-length = 88
-target-version = "py{{ python_version | replace('.', '') }}"
-
-[tool.ruff.lint]
-select = ["E", "F", "I", "B", "UP"]
+target-version = ["py{{ python_version | replace('.', '') }}"]

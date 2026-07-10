@@ -1,7 +1,7 @@
 # Python Programming Lab Template
 
 A prompt-driven [Copier](https://copier.readthedocs.io/) template for creating
-small Python programming labs with `uv`, pytest, and Ruff.
+small Python programming labs with `uv`, pytest, Black, and pre-commit.
 
 ## Use the template
 
@@ -37,10 +37,20 @@ def test_lab_passes() -> None:
     assert lab()
 ```
 
-After generation:
+## Set up the generated lab
 
 ```bash
 cd lab7
 uv sync --dev
+uv run pre-commit install
 uv run pytest
+```
+
+The pre-commit hook only formats Python files with Black. It does not run a
+linter or enforce additional code-quality rules.
+
+Run the formatter hook manually with:
+
+```bash
+uv run pre-commit run --all-files
 ```

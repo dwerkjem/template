@@ -6,12 +6,28 @@
 
 {{ description }}
 
-## Run the tests
+## Set up the project
 
 ```bash
 uv sync --dev
+uv run pre-commit install
+```
+
+## Run the tests
+
+```bash
 uv run pytest
 ```
+
+## Format the code
+
+```bash
+uv run black .
+uv run pre-commit run --all-files
+```
+
+The pre-commit hook only formats Python files with Black. It does not lint the
+code or enforce additional style rules.
 
 ## Assignment requirements
 
@@ -31,6 +47,7 @@ uv run pytest
 │   └── __init__.py
 ├── tests/
 │   └── test_lab.py
+├── .pre-commit-config.yaml
 ├── pyproject.toml
 └── README.md
 ```
