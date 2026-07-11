@@ -25,16 +25,23 @@ description, and Python version.
 The generated project begins with only one placeholder function:
 
 ```python
-def lab() -> bool:
-    """Replace this placeholder with the lab implementation."""
-    return True
+def main() -> None:
+    """Run the lab program."""
+    return None
 ```
 
 And one passing test:
 
 ```python
-def test_lab_passes() -> None:
-    assert lab()
+def test_main_passes() -> None:
+    assert main() is None
+```
+
+The project slug becomes a command that calls `main()` from the generated
+package's `__init__.py`. For example, a project slug of `lab7` runs with:
+
+```bash
+uv run lab7
 ```
 
 ## Set up the generated lab
